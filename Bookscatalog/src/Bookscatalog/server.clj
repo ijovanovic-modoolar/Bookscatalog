@@ -1,5 +1,6 @@
 (ns Bookscatalog.server
-  (:require [noir.server :as server]))
+  (:require [noir.server :as server])
+  (:gen-class))
 
 (server/load-views-ns 'Bookscatalog.views)
 
@@ -8,4 +9,3 @@
         port (Integer. (get (System/getenv) "PORT" "8080"))]
     (server/start port {:mode mode
                         :ns 'Bookscatalog})))
-
